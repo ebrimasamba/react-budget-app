@@ -1,0 +1,5 @@
+If localstorage is empty or not created => create it (localstorage.setItem("database", --))
+and push the items in our state variable array in the localstorage
+if localstorage is created => get the items localstorage.getItem("database")
+and still push the continuing items in the localstor 
+
