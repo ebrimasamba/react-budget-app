@@ -1,10 +1,31 @@
 * {
   font-family: nunito, helvetica;
+  /* outline: none; */
 }
 
+input:focus,
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 /* .text-7xl {
   font-size: 5.5rem;
 } */
+
+.bg-blue-gradient {
+  background-image: linear-gradient(to left, #5b93f3, #0759e6);
+}
+.bg-red-gradient {
+  background-image: linear-gradient(to left, #f06969, #e41313);
+}
+
+.bg-back {
+  background-image: linear-gradient(#1818189a, #18181871),
+    url(./img/nathan-dumlao-oRKF_ZBJYGM-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .delete-btn {
   top: 0;
   left: 0%;
@@ -12,3 +33,9 @@
 .transactions:hover .delete-btn {
   transform: translateX(-100%);
 }
+
+/* .max-h-200 {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: visible;
+} */

@@ -20,7 +20,9 @@ export const Balance = () => {
       <h4 className="uppercase text-sm">Your Balance</h4>
       <p className="font-semibold text-2xl">
         D
-        {database.reduce((acc, currValue) => acc + Number(currValue.amount), 0)}
+        {Intl.NumberFormat().format(
+          database.reduce((acc, currValue) => acc + Number(currValue.amount), 0)
+        )}
       </p>
     </div>
   );

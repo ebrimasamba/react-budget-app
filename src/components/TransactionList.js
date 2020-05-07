@@ -11,7 +11,7 @@ export const TransactionList = () => {
   return (
     <div className="mt-5">
       <h3 className="font-bold border-b pb-1 text-lg">History</h3>
-      <div>
+      <div className="text-black">
         {database.length > 0 ? (
           database.map((item, id) => (
             <Transaction
@@ -22,7 +22,7 @@ export const TransactionList = () => {
             ></Transaction>
           ))
         ) : (
-          <p className="mt-3">No History</p>
+          <p className="mt-3 text-gray-100">No History</p>
         )}
       </div>
     </div>

@@ -6,14 +6,24 @@ export const AddTransaction = () => {
   const [amount, setAmount] = useState(0);
   const [database, setDatabase] = useContext(TransactionContext);
   const [items, setItems] = useState([]);
+  // const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   useEffect(() => {
     // setDatabase(JSON.parse(localStorage.getItem("database")));
     //   eslint-disable-next-line
   }, []);
   const addTransaction = (e) => {
-    console.log(database);
     e.preventDefault();
+    console.log(database);
+    if (name === "") {
+      alert("your item has no name");
+      return;
+    }
+
+    if (amount === 0) {
+      alert("you transaction amount cannot be zero");
+      return;
+    }
     setDatabase((prevItems) => [...prevItems, { name: name, amount: amount }]);
     // localStorage.setItem("database", JSON.stringify(database));
 
@@ -38,7 +48,7 @@ export const AddTransaction = () => {
               onChange={(e) => {
                 setName(e.target.value);
               }}
-              className="form-input w-full p-3 shadow rounded-md text-sm"
+              className="form-input w-full p-3 shadow rounded-md text-sm text-black"
               placeholder="name of transaction"
             />
           </div>
@@ -53,7 +63,7 @@ export const AddTransaction = () => {
               onChange={(e) => {
                 setAmount(e.target.value);
               }}
-              className="form-input w-full p-3 shadow rounded-md text-sm"
+              className="form-input w-full p-3 shadow rounded-md text-sm text-black"
               placeholder="negative-expense positive-income"
             />
           </div>
