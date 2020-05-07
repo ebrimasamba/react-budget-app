@@ -4,7 +4,7 @@ import { TransactionProvider } from "./TransactionContext";
 
 export const Layout = ({ children }) => {
   return (
-    <div className="py-5 text-white bg-back min-h-screen px-10">
+    <div className="py-5 text-white bg-back min-h-screen px-5">
       <TransactionProvider>
         <Header></Header>
         {children}
