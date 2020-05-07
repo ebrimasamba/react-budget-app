@@ -51,7 +51,7 @@ export const IncomeExpenses = () => {
       <div className="bg-blue-gradient text-gray-100 text-center w-1/2 rounded-md border-l-4 border-blue-600 p-3 relative shadow">
         <div className="relative z-10">
           <h5 className="uppercase font-bold tracking-widest">Income</h5>
-          <span className="text font-bold text-xl">
+          <span className="text font-bold text-lg md:text-xl ">
             +D{Math.abs(income).toFixed(2)}
           </span>
         </div>
@@ -60,7 +60,7 @@ export const IncomeExpenses = () => {
       <div className="bg-red-gradient text-gray-100 text-center w-1/2 rounded-md border-l-4 border-red-600 p-3 relative ml-2 shadow">
         <div className="relative z-10">
           <h5 className="uppercase font-bold tracking-widest">Expenses</h5>
-          <span className="tex font-bold text-xl">
+          <span className="tex font-bold text-lg md:text-xl">
             -D{Math.abs(expense).toFixed(2)}
           </span>
         </div>
