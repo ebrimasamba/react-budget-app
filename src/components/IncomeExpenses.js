@@ -21,6 +21,8 @@ export const IncomeExpenses = () => {
       );
       setIncome(incomes);
       // console.log("From income and expenses reduce", incomes);
+    } else {
+      setIncome(0);
     }
   };
 
@@ -36,6 +38,8 @@ export const IncomeExpenses = () => {
       );
       setExpense(expenses);
       // console.log("From income and expenses reduce", expenses);
+    } else {
+      setExpense(0);
     }
     // console.log("From income and expenses expenseAmount", expenseAmount);
   };

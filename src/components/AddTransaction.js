@@ -3,7 +3,7 @@ import { TransactionContext } from "./TransactionContext";
 
 export const AddTransaction = () => {
   const [name, setName] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
   const [database, setDatabase] = useContext(TransactionContext);
   const [items, setItems] = useState([]);
   // const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -20,12 +20,11 @@ export const AddTransaction = () => {
       return;
     }
 
-    if (amount === 0) {
-      alert("you transaction amount cannot be zero");
+    if (Number(amount) === 0 || amount === "") {
+      alert("you transaction amount cannot be empty or zero");
       return;
     }
     setDatabase((prevItems) => [...prevItems, { name: name, amount: amount }]);
-    // localStorage.setItem("database", JSON.stringify(database));
 
     setName("");
     setAmount("");
@@ -38,7 +37,7 @@ export const AddTransaction = () => {
         </h3>
         <div className="mt-5 ">
           <div className="text-sm">
-            <label htmlFor="" className="block font-semibold mb-1">
+            <label htmlFor="name" className="block font-semibold mb-1">
               Name
             </label>
             <input
@@ -50,10 +49,11 @@ export const AddTransaction = () => {
               }}
               className="form-input w-full p-3 shadow rounded-md text-sm text-black"
               placeholder="name of transaction"
+              id="name"
             />
           </div>
           <div className="mt-3 text-sm">
-            <label htmlFor="" className="block font-semibold mb-1">
+            <label htmlFor="amount" className="block font-semibold mb-1">
               Amount
             </label>
             <input
@@ -65,6 +65,7 @@ export const AddTransaction = () => {
               }}
               className="form-input w-full p-3 shadow rounded-md text-sm text-black"
               placeholder="negative-expense positive-income"
+              id="amount"
             />
           </div>
           <button
