@@ -14,9 +14,9 @@ export const Transaction = ({ name, amount, id }) => {
     setTimeout(() => {
       console.log(database[id].name, " has been deleted");
       setDatabase(database.filter((value, index) => index !== id));
-      localStorage.setItem("database", JSON.stringify(database));
+      localStorage.setItem("database179", JSON.stringify(database));
       console.log("database", database);
-    }, 400);
+    }, 0);
   };
 
   return (
