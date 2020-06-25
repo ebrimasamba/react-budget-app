@@ -22,7 +22,7 @@ export const TransactionList = () => {
             ></Transaction>
           ))
         ) : (
-          <p className="mt-3 text-gray-100">No History</p>
+          <p className="mt-3 text-gray-100">No items found</p>
         )}
       </div>
     </div>

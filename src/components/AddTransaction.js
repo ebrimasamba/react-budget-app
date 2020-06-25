@@ -5,11 +5,17 @@ export const AddTransaction = () => {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
   const [database, setDatabase] = useContext(TransactionContext);
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
   // const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   useEffect(() => {
-    // setDatabase(JSON.parse(localStorage.getItem("database")));
+    if (localStorage.getItem("database179")) {
+      console.log("There is a local storage");
+      setDatabase(JSON.parse(localStorage.getItem("database179")));
+    } else {
+      localStorage.setItem("database179", JSON.stringify(database));
+      console.log("There is no local storage so we create one");
+    }
     //   eslint-disable-next-line
   }, []);
   const addTransaction = (e) => {
@@ -25,6 +31,7 @@ export const AddTransaction = () => {
       return;
     }
     setDatabase((prevItems) => [...prevItems, { name: name, amount: amount }]);
+    localStorage.setItem("database179", JSON.stringify(database));
 
     setName("");
     setAmount("");
